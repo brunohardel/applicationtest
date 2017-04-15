@@ -1,4 +1,4 @@
-package br.com.brrf.application;
+package br.com.brrf.application.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 

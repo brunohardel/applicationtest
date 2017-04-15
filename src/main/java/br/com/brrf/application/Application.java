@@ -19,9 +19,9 @@ public class Application {
 
     }
 
-    @RequestMapping (path = "/olaMundo")
-    public String olaMundo(){
-        return "Index";
+    @RequestMapping (path = "/Cadastro")
+    public String Cadastro(){
+        return "Cadastro";
     }
 
 }

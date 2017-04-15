@@ -2,7 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title>Formulario</title>
+
+    <style>
+    form{ width:500px; background:#f4f4f4; border:2px solid #333333; }
+        form input[type=text] { width:350px; margin-left:30px;}
+    </style>
 </head>
-<body> Olá Rafa! </body>
+
+<body>
+<h1 style="padding:5px;"> Formulário </h1>
+
+<form name="formulario" action="" method="post" enctype="multipart/form-data">
+    Nome:<input name="nome" type="text" value=""></input>
+    <br/>
+    Sobrenome:<input name="sobrenome" type="text" value=""></input>
+    <br/>
+    Login:<input name="login" type="text" value=""></input>
+    <br/>
+    Senha:<input name="senha" type="text" value=""></input>
+    <br/>
+    Email:<input name="email" type="text" value=""></input>
+    <br/>
+
+    <input name="Enviar" value="Enviar" type="submit"></input>
+</form>
+</body>
 </html>

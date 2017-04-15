@@ -10,12 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 
 @SpringBootApplication
+@Controller
 
 public class Application {
     public static void main(String[] args){
 
         SpringApplication.run(Application.class,args);
-//Teste de Github
+
+    }
+
+    @RequestMapping (path = "/Cadastro")
+    public String Cadastro(){
+        return "Cadastro";
     }
 
 }

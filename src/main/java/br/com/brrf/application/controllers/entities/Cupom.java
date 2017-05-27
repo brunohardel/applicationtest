@@ -1,6 +1,6 @@
 package br.com.brrf.application.controllers.entities;
 
-import sun.util.calendar.BaseCalendar;
+import br.com.brrf.application.controllers.core.ColumnsDefinitions;
 
 import javax.persistence.*;
 import java.text.DecimalFormat;
@@ -17,7 +17,7 @@ public class Cupom {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long id;
-    @Column (columnDefinition = "Decimal(10,2)")
+    @Column (columnDefinition = ColumnsDefinitions.MONEY_VALUES)
     private DecimalFormat valor;
     private Date dataLancamento;
     @ManyToOne (targetEntity = Pessoa.class)

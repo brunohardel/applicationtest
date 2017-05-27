@@ -4,6 +4,7 @@ import br.com.brrf.application.controllers.Repositorios.PessoaRepositorio;
 import br.com.brrf.application.controllers.entities.Pessoa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,14 +24,17 @@ public class LoginController {
     }
 
     @RequestMapping(path = "/logar", method = RequestMethod.POST)
-    public String logar(Pessoa pessoa) {
+    public String logar(Pessoa pessoa, Model model) {
         Pessoa pessoaAutenticada = repositorio.findByLogin(pessoa.getLogin());
 
-        if (pessoaAutenticada != null && pessoaAutenticada.getLogin() == pessoa.getLogin() && pessoaAutenticada.getSenha() == pessoa.getSenha()){
+        if (    pessoaAutenticada != null
+                && pessoaAutenticada.getLogin().equals(pessoa.getLogin())
+                && pessoaAutenticada.getSenha().equals(pessoa.getSenha())){
+
+            model.addAttribute("Pessoa", pessoaAutenticada);
             return "retornoCadastro";
         }
         return null;
     }
-
 
 }

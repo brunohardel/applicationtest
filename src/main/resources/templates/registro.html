@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Formulario de registro</title>
+    <link rel="stylesheet" href="/registro.css"/>
+</head>
+<body>
+    <h1>Formulario de registro</h1>
+    <form name="Pessoa" action="/inscricao/inscrever" method="post">
+        <h2 class="form__titulo">CRIAR UMA CONTA</h2>
+        <div class="conteiner-inputs">
+            <input type="text" name="nome" placeholder="Nome" class="input-48"/>
+            <input type="text" name="sobrenome" placeholder="Sobrenome" class="input-48" />
+            <input type="text" name="email" placeholder="E-mail" class="input-100" />
+            <input type="text" name="login" placeholder="Login" class="input-48" />
+            <input type="password" name="senha" placeholder="Senha" class="input-48" />
+            <input type="text" name="telefone" placeholder="Telefone" class="input-100" />
+            <button type="submit" class="btn-enviar">Registrar</button>
+            <p class=""> Já tem uma conta? <a href="#"> Entre aqui</a></p>
+        </div>
+    </form>
+</body>
+</html>

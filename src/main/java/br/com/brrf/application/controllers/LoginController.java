@@ -1,6 +1,8 @@
 package br.com.brrf.application.controllers;
 
+import br.com.brrf.application.controllers.Repositorios.PessoaRepositorio;
 import br.com.brrf.application.controllers.entities.Pessoa;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,16 +14,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(path = "/inscricao")
 public class LoginController {
 
+    @Autowired
+    PessoaRepositorio repositorio;
+
     @RequestMapping(path = "/login")
     public String trazerLogin() {
-        return "Login";
+        return "login";
     }
 
     @RequestMapping(path = "/logar", method = RequestMethod.POST)
-    public void logar(Pessoa pessoa) {
+    public String logar(Pessoa pessoa) {
+        Pessoa pessoaAutenticada = repositorio.findByLogin(pessoa.getLogin());
 
-        System.out.println("O Login é: " + pessoa.getLogin());
-        System.out.println("A Senha é: " + pessoa.getSenha());
+        if (pessoaAutenticada != null && pessoaAutenticada.getLogin() == pessoa.getLogin() && pessoaAutenticada.getSenha() == pessoa.getSenha()){
+            return "retornoCadastro";
+        }
+        return null;
     }
 
 

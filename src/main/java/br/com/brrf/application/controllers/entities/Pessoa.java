@@ -1,10 +1,19 @@
 package br.com.brrf.application.controllers.entities;
 
+import javax.lang.model.element.Name;
+import javax.persistence.*;
+
 /**
  * Created by rafael on 15/04/17.
  */
+
+@Entity
+@Table (name = "Pessoa")
 public class Pessoa {
 
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nome;
     private String sobrenome;
     private String login;

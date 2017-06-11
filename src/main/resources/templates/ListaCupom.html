@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ListaCupom</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+</head>
+<body>
+<table class="table table-sm table-striped table-hover table-bordered" >
+    <thead>
+    <tr>
+        <th>"Numero do Cupomn"</th>
+        <th>"Data"</th>
+        <th>"Valor"</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="cupom : ${cupons}">
+        <td th:text="${cupom.numerocupom}"></td>
+        <td th:text="${#dates.format(cupom.data, 'dd/MM/yyyy')}"></td>
+        <td th:text="${cupom.valor}"></td>
+        <td>
+            <div class="btn-group pull-right">
+                <a class="btn btn-sm btn-primary" > Informações </a>
+            </div>
+        </td>
+    </tr>
+    </tbody>
+
+    <div>
+        <input type="text" name="NumeroCupom" placeholder="Numero do Cupom"/>
+    </div>
+    <div>
+        <input type="text" name="DataCupom" placeholder="Data do Cupom"/>
+    </div>
+    <div>
+        <input type="text" name="ValorCupom" placeholder="Valor do Cupom"/>
+    </div>
+
+</body>
+</html>

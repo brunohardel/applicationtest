@@ -17,9 +17,12 @@ public class Cupom {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column (columnDefinition = ColumnsDefinitions.MONEY_VALUES)
     private DecimalFormat valor;
+
     private Date dataLancamento;
+
     @ManyToOne (targetEntity = Pessoa.class)
     private long idPessoa;
 
